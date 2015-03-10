@@ -1,7 +1,8 @@
 module Data.Monoid.Additive where
 
-import Control.Comonad
-import Control.Extend
+import Control.Comonad (Comonad, extract)
+import Control.Extend (Extend, (<<=))
+import Data.Functor.Invariant (Invariant, invmap)
 import Data.Monoid
 
 -- | Monoid and semigroup for semirings under addition.
@@ -41,6 +42,9 @@ instance extendAdditive :: Extend Additive where
 
 instance comonadAdditive :: Comonad Additive where
   extract = runAdditive
+
+instance invariantAdditive :: Invariant Additive where
+  invmap f _ (Additive x) = Additive (f x)
 
 instance showAdditive :: (Show a) => Show (Additive a) where
   show (Additive a) = "Additive (" ++ show a ++ ")"

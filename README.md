@@ -1,9 +1,3 @@
-# Breaking Change Notice
-
-`purescript-monoid` v0.2.0 requires PureScript v0.6.8 or later as previously the `Semiring` class did not exist in `Prelude`.
-
-----
-
 # Module Documentation
 
 ## Module Data.Monoid
@@ -145,6 +139,13 @@ instance extendAdditive :: Extend Additive
 
 ``` purescript
 instance comonadAdditive :: Comonad Additive
+```
+
+
+#### `invariantAdditive`
+
+``` purescript
+instance invariantAdditive :: Invariant Additive
 ```
 
 
@@ -374,6 +375,13 @@ instance comonadDual :: Comonad Dual
 ```
 
 
+#### `invariantDual`
+
+``` purescript
+instance invariantDual :: Invariant Dual
+```
+
+
 #### `showDual`
 
 ``` purescript
@@ -417,6 +425,13 @@ mempty :: Endo _ == Endo id
 
 ``` purescript
 runEndo :: forall a. Endo a -> a -> a
+```
+
+
+#### `invariantEndo`
+
+``` purescript
+instance invariantEndo :: Invariant Endo
 ```
 
 
@@ -513,6 +528,13 @@ instance monadFirst :: Monad First
 
 ``` purescript
 instance extendFirst :: Extend First
+```
+
+
+#### `invariantFirst`
+
+``` purescript
+instance invariantFirst :: Invariant First
 ```
 
 
@@ -619,6 +641,13 @@ instance extendLast :: Extend Last
 ```
 
 
+#### `invariantLast`
+
+``` purescript
+instance invariantLast :: Invariant Last
+```
+
+
 #### `showLast`
 
 ``` purescript
@@ -713,17 +742,24 @@ instance monadMultiplicative :: Monad Multiplicative
 ```
 
 
-#### `extendAdditive`
+#### `extendMultiplicative`
 
 ``` purescript
-instance extendAdditive :: Extend Multiplicative
+instance extendMultiplicative :: Extend Multiplicative
 ```
 
 
-#### `comonadAdditive`
+#### `comonadMultiplicative`
 
 ``` purescript
-instance comonadAdditive :: Comonad Multiplicative
+instance comonadMultiplicative :: Comonad Multiplicative
+```
+
+
+#### `invariantMultiplicative`
+
+``` purescript
+instance invariantMultiplicative :: Invariant Multiplicative
 ```
 
 
